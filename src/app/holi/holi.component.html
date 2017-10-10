@@ -1,0 +1,27 @@
+<h4>Propiedades input en Angular</h4>
+
+
+<app-hijo 
+[p1]="'tengo un valor xD'"
+[texto]="texto"
+(desde_el_hijo)="recibirDatos($event)"
+> </app-hijo>
+
+<hr>
+<p>
+  holi works!
+</p>
+<input type="text"  [(ngModel)]="texto">
+
+<button (click)="cambiar()">cambiar</button>
+<strong *ngIf="administrador;then admin else noAdmin">
+	<strong>Eres el admin de la web app</strong>
+</strong>
+
+
+<ng-template #admin>
+	<strong>Eres el admin de la web app safasd</strong>
+</ng-template>
+<ng-template #noAdmin>
+	<strong>No eres el admin de la web app</strong>
+</ng-template>

@@ -1,0 +1,13 @@
+.bordeAzul{
+	border: 5px solid yellow !important;
+}
+.bordeVerde{
+	border: 5px solid pink !important;
+}
+
+body{
+	background:lightblue;
+}
+.activado{
+	background: yellow;
+}

@@ -1,0 +1,51 @@
+<input type="text" [(ngModel)]="texto">
+<button (click)="log()">Log</button>
+<br>
+Esto es un{{texto}}
+
+
+
+<h2>{{nombre_componente}}</h2>
+<p>{{lista_Empleados}}</p>
+{{numero}}
+{{empleado.toString()}}
+<br>
+<button (click)="cambiar(empleadosList[2].contratado)">Mostrar Trabajador</button>
+<div *ngIf="empleadosList[2].contratado" >
+  {{empleadosList[2].toString()}}
+</div>
+{{empleadosList[1].toString()}}
+
+
+
+
+<table>
+  <tr>
+      <th>nombre</th>
+      <th>edad</th>
+      <th>cargo</th>
+      <th>contratado</th>
+  </tr>
+  <tr *ngFor="let empleado of empleadosList, let i = index">
+    <td>{{empleado.nombre}}</td>
+    <td>{{empleado.edad}}</td>
+    <td>{{empleado.cargo}}</td>
+    <td>{{empleado.traduceContratado()}}</td>
+  </tr>
+</table>
+
+<h1>Cambia Color</h1>
+<button (click)="setColor('blue','white')">Azul</button>
+<button (click)="setColor('red','white')">Rojo</button>
+<button (click)="setColor('green')">Verde</button>
+<div [ngStyle]="{'background':backgroundcolor,'color':color}">
+  <div [ngSwitch]="backgroundcolor" [style.border]="(backgroundcolor=='red'?'5px solid black':'1px solid red')"
+  		[class.bordeAzul]="backgroundcolor=='blue'"
+  		[ngClass]="backgroundcolor=='green'?'bordeVerde':''">
+  <div *ngSwitchCase="'red'"> {{empleadosList[2].toString()}}</div>
+  <div *ngSwitchCase="'blue'"> {{empleadosList[0].toString()}}</div>
+  <div *ngSwitchCase="'green'"> {{empleadosList[1].toString()}}</div>
+</div>
+</div>
+
+

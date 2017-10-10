@@ -1,0 +1,19 @@
+<p>
+{{titulo}}
+</p>
+{{5 | conversor:7}}
+<!-- el 5 es el primer parametro del filtro
+	 el 7 es el segundo parametro del filtro -->
+<br>
+{{fecha| date:'dd/MM/yyyy / h:mm:sa'}}
+<br>
+<input type="text" [(ngModel)]="prenda"> {{prenda}}
+<button (click)="guardarPrenda()">Añadir</button>
+<h3>Listado de prendas de ropa</h3>
+
+<ul>
+	<li *ngFor="let prenda of lista_ropa; let i=index">{{prenda}}
+	<button (click)="eliminar(i)">Eliminar</button>
+	
+	</li>
+</ul>
